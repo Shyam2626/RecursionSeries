@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Main {
+  
+    private static void Print(int curr){
+      System.out.println(curr);
+      if(curr==1) return;
+      Print(curr-1);
+    }
+    
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      Print(n);
+    }
+    
+}
