@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main {
+  
+  
+    private static boolean CheckPalindrome(String str,int i,int len){
+      
+      if(i>=len/2) return true;
+      else if(str.charAt(i)!=str.charAt(len-i-1)) return false;
+      return CheckPalindrome(str,i+1,len);
+      
+    }
+    
+    public static void main(String[] args) {
+      
+      Scanner sc=new Scanner(System.in);
+      String str=sc.next();
+      if(CheckPalindrome(str,0,str.length())) System.out.println("Palindrome");
+      else System.out.println("Not a Palindrome");
+      
+  }
+}
