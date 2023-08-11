@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Main {
+  
+    private static void PrintName(int curr,int n){
+      System.out.println(curr+" SampleName");
+      if(curr==n) return;
+      PrintName(curr+1,n);
+    }
+  
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     PrintName(1,n);
+    }
+    
+}
