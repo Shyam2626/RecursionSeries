@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class Main {
+  
+    private static void Print(int curr,int n){
+      if(curr>n) return;
+      Print(curr+1,n);
+      System.out.println(curr);
+    }
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      Print(1,n);
+  }
+}  
