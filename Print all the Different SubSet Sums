@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+  
+    private static void SubsetSum(int n,int[] arr,int ind,int sum,List<Integer> ans){
+      
+      if(ind>=n){
+        if(!ans.contains(sum)) ans.add(sum);
+        return;
+      }
+      
+      sum+=arr[ind];
+      SubsetSum(n,arr,ind+1,sum,ans);
+      sum-=arr[ind];
+       SubsetSum(n,arr,ind+1,sum,ans);
+      
+    }
+  
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int arr[]=new int[n];
+     for(int i=0;i<n;i++) arr[i]=sc.nextInt();
+     ArrayList<Integer> ans=new ArrayList<>();
+     SubsetSum(n,arr,0,0,ans);
+     Collections.sort(ans);
+     for(int i=0;i<ans.size();i++) System.out.print(ans.get(i)+" ");
+    }
+}
